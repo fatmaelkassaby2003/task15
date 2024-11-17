@@ -1,8 +1,12 @@
-<?php 
+<?php
+session_start(); 
 define("BASE_PATH",__DIR__.DIRECTORY_SEPARATOR);
 define("BASE_URL","http://localhost:8000/");
 require_once(BASE_PATH.'data/connection.php');
+require_once(BASE_PATH.'core/sessions.php');
 require_once(BASE_PATH.'core/database.php');
+require_once(BASE_PATH.'core/request.php');
+
 //Routing 
 
 $routes =
@@ -11,6 +15,7 @@ $routes =
     "about",
     "posts",
     "contact",
+    "send-message",
     "post",
 ];
 
@@ -23,6 +28,7 @@ if(isset($_GET['page']))
 }
 else
 {
+    $status_code = '404';
     require_once 'views/404.php';
 }
 }

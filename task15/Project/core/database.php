@@ -32,3 +32,27 @@ function map_data($data)
 
     return $all_data;
 }
+
+function insert($table,$data)
+{
+    global $conn;
+    $keys = "`".implode("`,`",array_keys($data))."`";
+    $values = "'".implode("','",array_values($data))."'";
+    $sql = "INSERT INTO `$table`($keys) VALUES($values)";
+    return mysqli_query($conn,$sql);
+    // if($result)
+    // {
+    //     return true;
+    // }
+    // else
+    // {
+    //     return false;
+    // }
+}
+
+function delete($table,$id)
+{
+    global $conn;
+    $sql = "DELETE FROM `$table` WHERE id=$id";
+    return mysqli_query($conn,$sql);
+}

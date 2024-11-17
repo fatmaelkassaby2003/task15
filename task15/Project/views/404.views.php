@@ -13,7 +13,7 @@
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-md-10 col-lg-8 col-xl-7">
                 <div class="page-heading">
-                    <h1 class="text-center dislay-1 py-5">404</h1>
+                    <h1 class="text-center display-1 py-5"><?php echo $status_code; ?></h1>
                     <p class="text-center">NOT FOUND</p>
                 </div>
             </div>
